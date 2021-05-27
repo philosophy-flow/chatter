@@ -34,15 +34,19 @@ export default function Signup() {
       if (
         !registeredEmails.includes(credentials.email) &&
         !registeredUsernames.includes(credentials.username)) {
-          signup(credentials.email, credentials.password)
-          .then(user => {
-            const userId = user.user.uid;
-            db.ref(`users/${userId}`).set({
-              email: credentials.email,
-              username: credentials.username
-            });
-          })
-          .catch(error => setCredentials(credentials => ({...credentials, error: error.message})))
+          if (credentials.username.length > 6) {
+            signup(credentials.email, credentials.password)
+            .then(user => {
+              const userId = user.user.uid;
+              db.ref(`users/${userId}`).set({
+                email: credentials.email,
+                username: credentials.username
+              });
+            })
+            .catch(error => setCredentials(credentials => ({...credentials, error: error.message})))
+          } else {
+            setCredentials(credentials => ({...credentials, error: 'The username must be 6 characters long or more.'}));
+          }
       }
 
       // error message (email)
@@ -73,7 +77,6 @@ export default function Signup() {
           name="email"
           placeholder="Enter an email address"
           onChange={handleChange}
-          required
         />
         <br/><br/>
         <input
@@ -81,7 +84,6 @@ export default function Signup() {
           name="username"
           placeholder="Enter a username"
           onChange={handleChange}
-          required
         />
         <br/><br/>
         <input
@@ -89,7 +91,6 @@ export default function Signup() {
           name="password"
           placeholder="Enter a password"
           onChange={handleChange}
-          required
         />
         <br/><br/>
         {credentials.error ? <p>{credentials.error}</p> : null}
