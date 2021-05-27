@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {signin} from '../firebase';
+import {signin, resetPassword} from '../firebase';
 import {Link} from 'react-router-dom';
 
 
@@ -18,7 +18,7 @@ export default function Signup() {
   }
 
   // authenticate existing user
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setCredentials(credentials => ({...credentials, error: null}));
 
@@ -28,6 +28,10 @@ export default function Signup() {
     );
   }
 
+  // handle password reset
+  function handleReset() {
+    resetPassword(credentials.email);
+  }
 
   return (
     <div>
@@ -46,7 +50,16 @@ export default function Signup() {
           placeholder="Enter a password"
           onChange={handleChange}
         />
-        {credentials.error ? <p>{credentials.error}</p> : null}
+        {credentials.error
+          ? (
+            <>
+              <p>{credentials.error}</p>
+              <p>
+                Forgot password? | <button onClick={handleReset}>Reset Password</button>
+              </p>
+          </>
+          )
+          : null}
         <br/><br/>
         <button type="submit">Login</button>
       </form>

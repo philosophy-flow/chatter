@@ -26,3 +26,9 @@ export function signup(email, password) {
 export function signin(email, password) {
   return auth().signInWithEmailAndPassword(email, password);
 }
+
+export function resetPassword(email) {
+  auth().sendPasswordResetEmail(email)
+  .then(() => alert(`Password reset email sent to ${email}`))
+  .catch(error => alert(error.message));
+}
