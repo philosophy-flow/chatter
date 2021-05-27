@@ -18,7 +18,7 @@ export default function Signup() {
   }
 
   // verify email/username is available & add user to DB
-  async function handleSubmit(e) {
+  function handleSubmit(e) {
     e.preventDefault();
     setCredentials(credentials => ({...credentials, error: null}));
 
