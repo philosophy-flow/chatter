@@ -34,7 +34,7 @@ export default function Signup() {
       if (
         !registeredEmails.includes(credentials.email) &&
         !registeredUsernames.includes(credentials.username)) {
-          if (credentials.username.length > 6) {
+          if (credentials.username.length >= 6) {
             signup(credentials.email, credentials.password)
             .then(user => {
               const userId = user.user.uid;
@@ -73,16 +73,16 @@ export default function Signup() {
       <h2>Sign Up!</h2>
       <form onSubmit={handleSubmit}>
         <input
-          type="email"
-          name="email"
-          placeholder="Enter an email address"
+          type="text"
+          name="username"
+          placeholder="Enter a username"
           onChange={handleChange}
         />
         <br/><br/>
         <input
           type="text"
-          name="username"
-          placeholder="Enter a username"
+          name="email"
+          placeholder="Enter an email address"
           onChange={handleChange}
         />
         <br/><br/>
