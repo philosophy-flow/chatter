@@ -24,7 +24,7 @@ export default function Signup() {
 
     signin(credentials.email, credentials.password)
     .catch(error =>
-      setCredentials(credentials => ({...credentials, error: error.message}))
+      setCredentials(credentials => ({...credentials, error: 'Invalid username or password'}))
     );
   }
 
@@ -55,7 +55,7 @@ export default function Signup() {
             <>
               <p>{credentials.error}</p>
               <p>
-                Forgot password? | <button onClick={handleReset}>Reset Password</button>
+                Forgot password? | <button type="button" onClick={handleReset}>Reset Password</button>
               </p>
           </>
           )
