@@ -85,8 +85,15 @@ export default function Chat() {
         <input type="text" value={chatInfo.content} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
-      <p>Logged in as: <strong>{chatInfo.username}</strong></p>
-      <button onClick={handleLogout}>Logout</button>
+      <div>
+        <p>Logged in as: <strong>{chatInfo.username}</strong></p>
+        <button onClick={handleLogout}>Logout</button>
+      </div>
+      <hr/>
+      <div>
+        <h3>Users online:</h3>
+      </div>
+
     </div>
   );
 }
