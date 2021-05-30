@@ -14,7 +14,8 @@ export default function Signup() {
   // track email/password as state
   function handleChange(e) {
     setCredentials(credentials =>
-      ({...credentials, [e.target.name]: e.target.value}));
+      ({...credentials, [e.target.name]: e.target.value})
+    );
   }
 
   // verify email/username is available & add user to DB

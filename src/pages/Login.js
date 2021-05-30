@@ -12,9 +12,9 @@ export default function Signup() {
 
   // track email/password as state
   function handleChange(e) {
-    e.target.name === 'email'
-    ? setCredentials(credentials => ({...credentials, email: e.target.value}))
-    : setCredentials(credentials => ({...credentials, password: e.target.value}))
+    setCredentials(credentials => 
+      ({...credentials, [e.target.name]: e.target.value})
+    );
   }
 
   // authenticate existing user
