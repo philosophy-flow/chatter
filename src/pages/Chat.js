@@ -63,9 +63,19 @@ export default function Chat() {
     setChatInfo(chatInfo => ({...chatInfo, content: ''}));
   }
 
+
+  // tracks online status for current user
+  const onlineRef = db.ref(`online/${chatInfo.user.uid}`);
+
+  // deauthenticate user + update db 
   function handleLogout() {
+    onlineRef.set(false);
     auth().signOut();
   }
+
+
+  // update online status inside db if user does not log out before ending session
+  onlineRef.onDisconnect().set(false);
 
   return (
     <div>
