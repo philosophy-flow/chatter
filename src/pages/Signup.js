@@ -43,7 +43,6 @@ export default function Signup() {
                 email: credentials.email,
                 username: credentials.username
               });
-              db.ref(`online/${userId}`).set(true);
             })
             .catch(error => setCredentials(credentials => ({...credentials, error: error.message})))
           } else {

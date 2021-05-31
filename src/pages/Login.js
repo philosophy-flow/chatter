@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import {db, signin, resetPassword} from '../firebase';
+import {signin, resetPassword} from '../firebase';
 import {Link} from 'react-router-dom';
 
 
@@ -17,19 +17,12 @@ export default function Signup() {
     );
   }
 
-  // authenticate existing user + set presence
+  // authenticate existing user
   function handleSubmit(e) {
     e.preventDefault();
     setCredentials(credentials => ({...credentials, error: null}));
 
-    signin(credentials.email, credentials.password)
-    .then(userCredential => {
-      const userId = userCredential.user.uid;
-      db.ref(`online/${userId}`).set(true);
-    })
-    .catch(error =>
-      setCredentials(credentials => ({...credentials, error: 'Invalid username or password'}))
-    );
+    signin(credentials.email, credentials.password);
   }
 
   // handle password reset

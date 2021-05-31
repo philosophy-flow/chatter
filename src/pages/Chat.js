@@ -6,6 +6,7 @@ export default function Chat() {
     user: auth().currentUser,
     username: '',
     chats: [],
+    usersOnline: [],
     content: '',
     readError: null,
     writeError: null
@@ -16,7 +17,7 @@ export default function Chat() {
   useEffect(() => {
     setChatInfo(chatInfo => ({...chatInfo, readError: null}));
 
-    // sync current chats
+    // sync current chats + online users
     try {
       db.ref('chats').on('value', snapshot => {
         let chats = [];
@@ -25,15 +26,43 @@ export default function Chat() {
         });
         setChatInfo(chatInfo => ({...chatInfo, chats: chats}));
       });
+
+      // set user online in db in case of page refresh
+      db.ref(`online/${chatInfo.user.uid}`).set(true);
+
+      
+      db.ref('online').on('value', snapshot => {
+        let usersOnline = [];
+        const dataObject = snapshot.val();
+
+        
+        for (const [key, value] of Object.entries(dataObject)) {
+          if (value) {
+            db.ref('users').orderByKey().equalTo(key).once('value',
+            snapshot => {
+              const username = snapshot.val()[key].username;
+              if (!usersOnline.includes(username)) {
+                usersOnline.push(username);
+              }
+            })
+            .then(() => setChatInfo(chatInfo => ({...chatInfo, usersOnline: usersOnline})));
+          }
+        }
+      });
     } catch (error) {
       setChatInfo(chatInfo => ({...chatInfo, readError: error.message}));
     }
+
 
     // retrieve current user username
     db.ref('users').orderByKey().equalTo(chatInfo.user.uid).once('value', snapshot => {
       const username = snapshot.val()[chatInfo.user.uid].username;
       setChatInfo(chatInfo => ({...chatInfo, username: username}));
     });
+
+    return () => {
+      db.ref('online').off();
+    }
   }, [chatInfo.user.uid]);
 
 
@@ -102,6 +131,9 @@ export default function Chat() {
       <hr/>
       <div>
         <h3>Users online:</h3>
+        {
+          chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
+        }
       </div>
 
     </div>
