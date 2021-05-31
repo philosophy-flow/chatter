@@ -61,6 +61,7 @@ export default function Chat() {
     });
 
     return () => {
+      db.ref('chats').off();
       db.ref('online').off();
     }
   }, [chatInfo.user.uid]);

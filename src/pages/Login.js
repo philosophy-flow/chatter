@@ -22,7 +22,8 @@ export default function Signup() {
     e.preventDefault();
     setCredentials(credentials => ({...credentials, error: null}));
 
-    signin(credentials.email, credentials.password);
+    signin(credentials.email, credentials.password)
+    .catch(e => setCredentials(credentials => ({...credentials, error: e.message})));
   }
 
   // handle password reset
