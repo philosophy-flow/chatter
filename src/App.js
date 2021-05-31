@@ -1,5 +1,3 @@
-// test commit
-
 // IMPORT DEPENDENCIES
 import React, {useState, useEffect} from 'react';
 import {
