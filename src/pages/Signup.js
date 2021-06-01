@@ -1,3 +1,4 @@
+import './credentials.css';
 import React, {useState} from 'react';
 import {db, signup} from '../firebase';
 import {Link} from 'react-router-dom';
@@ -70,9 +71,9 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <h2>Sign Up!</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="Credential">
+      <h2 className="credential-title">Sign Up!</h2>
+      <form className="credential-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="username"
@@ -94,13 +95,13 @@ export default function Signup() {
           onChange={handleChange}
         />
         <br/><br/>
-        {credentials.error ? <p>{credentials.error}</p> : null}
+        {credentials.error ? <p className="credential-error">{credentials.error}</p> : null}
         <button type="submit">Create an Account</button>
-        <hr/>
-        <p>
-          Already have an account? | <span><Link to="/login">Login</Link></span>
-        </p>
       </form>
+      <hr/>
+        <p>
+          Already have an account? | <span><Link className="Link" to="/login">Login</Link></span>
+        </p>
     </div>
   );
 }

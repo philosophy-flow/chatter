@@ -36,8 +36,9 @@ body {
 /* APP & LINKS */
 .App {
     background-color: #FFF;
-    padding: 4rem;
+    padding: 3rem;
     border-radius: 1rem;
+    border: 2px solid green;
 }
 
 .Link {

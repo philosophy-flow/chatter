@@ -1,3 +1,7 @@
+.Home {
+    width: 300px;
+}
+
 .home-svg {
     display: block;
     width: 50%;
@@ -5,7 +9,7 @@
 }
 
 .home-main-text {
-    font-size: 3rem;
+    font-size: 3.5rem;
 }
 
 @keyframes color-change {

@@ -1,3 +1,4 @@
+import './credentials.css';
 import React, {useState} from 'react';
 import {signin, resetPassword} from '../firebase';
 import {Link} from 'react-router-dom';
@@ -32,9 +33,9 @@ export default function Signup() {
   }
 
   return (
-    <div>
-      <h2>Login!</h2>
-      <form onSubmit={handleSubmit}>
+    <div className="Credential">
+      <h2 className="credential-title">Login!</h2>
+      <form className="credential-form" onSubmit={handleSubmit}>
         <input
           type="text"
           name="email"
@@ -48,22 +49,22 @@ export default function Signup() {
           placeholder="Enter a password"
           onChange={handleChange}
         />
+        <br/><br/>
         {credentials.error
           ? (
-            <>
+            <div className="credential-error">
               <p>{credentials.error}</p>
               <p>
                 Forgot password? | <button type="button" onClick={handleReset}>Reset Password</button>
               </p>
-          </>
+          </div>
           )
           : null}
-        <br/><br/>
         <button type="submit">Login</button>
       </form>
       <hr/>
       <p>
-        Don't have an account? | <span><Link to="/signup">Sign Up</Link></span>
+        Don't have an account? | <span><Link className="Link" to="/signup">Sign Up</Link></span>
       </p>
     </div>
   );
