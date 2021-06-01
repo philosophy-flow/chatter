@@ -53,3 +53,17 @@ body {
     color: #fc466b;
     transition: .3s;
 }
+
+
+
+/* mobile */
+@media only screen and (max-width: 450px) {
+    body {
+        display: block;
+    }
+
+    .root {
+        border: 1px solid red;
+        padding-top: 2rem;
+    }
+}
