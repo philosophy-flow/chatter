@@ -1,0 +1,40 @@
+.Chat {
+    width: 800px;
+    max-height: 600px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+
+    grid-template-areas:
+    "chat-logo chat-log chat-log"
+    "chat-profile chat-log chat-log"
+    "chat-profile chat-log chat-log"
+    "chat-profile chat-log chat-log"
+    "chat-users chat-log chat-log"
+    "chat-users chat-log chat-log"
+    "chat-users chat-log chat-log"
+    "chat-users chat-form chat-form";
+}
+
+.chat-profile { grid-area: chat-profile; }
+.chat-users { grid-area: chat-users; }
+.chat-logo { grid-area: chat-logo; }
+.chat-log { grid-area: chat-log; }
+.chat-form { grid-area: chat-form; }
+
+
+
+.chat-profile {
+
+}
+
+.chat-users {
+
+}
+
+
+.chat-log {
+    overflow: scroll;
+}

@@ -1,3 +1,4 @@
+import './Chat.css';
 import React, {useState, useEffect} from 'react';
 import {auth, db} from '../firebase';
 
@@ -108,7 +109,9 @@ export default function Chat() {
   onlineRef.onDisconnect().set(false);
 
   return (
-    <div>
+    <div className="Chat">
+      <div className="chat-logo">CHATTER</div>
+
       <div className="chat-log">
         {
           chatInfo.chats.map(chat => {
@@ -119,18 +122,20 @@ export default function Chat() {
             )
           })
         }
+        
       </div>
-      <hr/>
+      
       <form className="chat-form" onSubmit={handleSubmit}>
         <input type="text" value={chatInfo.content} onChange={handleChange} />
         <button type="submit">Submit</button>
       </form>
-      <div>
+
+      <div className="chat-profile">
         <p>Logged in as: <strong>{chatInfo.username}</strong></p>
         <button onClick={handleLogout}>Logout</button>
       </div>
-      <hr/>
-      <div>
+
+      <div className="chat-users">
         <h3>Users online:</h3>
         {
           chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
