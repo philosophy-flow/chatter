@@ -6,7 +6,18 @@
 
 .home-main-text {
     font-size: 3rem;
+}
 
+@keyframes color-change {
+    0% {color: #000;}
+    100% {color: #fc466b;}
+}
+
+.home-main-text span {
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    animation-name: color-change;
+    animation-duration: 1s;
 }
 
 .home-sub-text {

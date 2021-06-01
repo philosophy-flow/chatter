@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div className="Home">
       <img className="home-svg" src={chatSvg} alt="text-bubble"/>
-      <h1 className="home-main-text">Welcome to Chatter</h1>
+      <h1 className="home-main-text">Welcome to <span>Chatter</span></h1>
       <p className="home-sub-text">A simple chat room.</p>
       <div className="home-link-container">
         <Link className="Link" to="/signup">Signup</Link>
