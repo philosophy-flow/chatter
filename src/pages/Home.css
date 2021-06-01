@@ -1,5 +1,6 @@
 .Home {
-    width: 300px;
+    width: 100%;
+    max-width: 300px;
 }
 
 .home-svg {
@@ -36,4 +37,12 @@
 
 .home-link-container .Link:first-child {
     margin-right: 1rem;
+}
+
+
+/* mobile */
+@media only screen and (max-width: 450px) {
+    .home-main-text {
+        font-size: 2.6rem;
+    }
 }

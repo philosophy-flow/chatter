@@ -63,7 +63,7 @@ export default function Signup() {
         <button type="submit">Login</button>
       </form>
       <hr/>
-      <p>
+      <p className="credential-footer">
         Don't have an account? | <span><Link className="Link" to="/signup">Sign Up</Link></span>
       </p>
     </div>
