@@ -64,26 +64,29 @@ function App() {
 
 
   return authStatus.loading === true ? <h2>Loading...</h2> : (
-    <Router>
-      <Switch>
-        <Route exact path="/" component={Home} />
-        <PrivateRoute
-          path="/chat"
-          authenticated={authStatus.authenticated}
-          component={Chat}
-        />
-        <PublicRoute
-          path="/signup"
-          authenticated={authStatus.authenticated}
-          component={Signup}
-        />
-        <PublicRoute
-          path="/login"
-          authenticated={authStatus.authenticated}
-          component={Login}
-        />
-      </Switch>
-    </Router>
+    <div className="App">
+      <Router>
+        <Switch>
+          <Route exact path="/" component={Home} />
+          <PrivateRoute
+            path="/chat"
+            authenticated={authStatus.authenticated}
+            component={Chat}
+          />
+          <PublicRoute
+            path="/signup"
+            authenticated={authStatus.authenticated}
+            component={Signup}
+          />
+          <PublicRoute
+            path="/login"
+            authenticated={authStatus.authenticated}
+            component={Login}
+          />
+        </Switch>
+      </Router>
+    </div>
+
   );
 }
 

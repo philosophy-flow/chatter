@@ -1,0 +1,24 @@
+.home-svg {
+    display: block;
+    width: 50%;
+    margin: 0 auto 1rem;
+}
+
+.home-main-text {
+    font-size: 3rem;
+
+}
+
+.home-sub-text {
+   font-size: 1.33rem;
+   margin: 1rem 0; 
+   font-weight: 300;
+}
+
+.home-link-container {
+    display: flex;
+}
+
+.home-link-container .Link:first-child {
+    margin-right: 1rem;
+}
