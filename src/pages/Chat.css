@@ -1,6 +1,5 @@
 .Chat {
     width: 100%;
-    border: 1px solid red;
 }
 
 .chat-logo {
@@ -10,7 +9,6 @@
 .chat-log {
     height: 400px;
     overflow: scroll;
-    margin-bottom: 1rem;
 
     background-color: var(--background-color);
     border-radius: .5rem;
@@ -33,6 +31,7 @@
 
 .chat-form {
     position: relative;
+    margin: 1rem 0 1.5rem;
 }
 
 .chat-form input {
@@ -67,12 +66,37 @@
     transform: translateY(-50%);
 }
 
+
 .chat-profile {
-    margin: 2rem 0;
+    padding: 1.25rem;
+    background-color: var(--background-color);
+    border-radius: .5rem;
+    font-weight: bold;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+.chat-profile button {
+    padding: .5rem;
+    background-color: #3f5efb;
+    border: none;
+    border-radius: .33rem;
+    color: #fff;
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: .3s;
+
+    margin-top: .5rem;
 }
 
 .chat-users {
-
+    padding: 1.25rem;
+    background-color: var(--background-color);
+    border-radius: .5rem;
+    text-align: center;
 }
 
 

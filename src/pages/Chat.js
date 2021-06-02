@@ -139,20 +139,23 @@ export default function Chat() {
       
       <form className="chat-form" onSubmit={handleSubmit}>
         <input type="text" placeholder="Say something..." value={chatInfo.content} onChange={handleChange} />
-        <button type="submit"><i class="fas fa-arrow-right fa-2x"></i></button>
+        <button type="submit"><i className="fas fa-arrow-right fa-2x"></i></button>
       </form>
+      
+      <div className="chat-info-container">
+        <div className="chat-profile">
+          <p>{chatInfo.username}</p>
+          <button onClick={handleLogout}>Logout</button>
+        </div>
 
-      <div className="chat-profile">
-        <p>Logged in as: <strong>{chatInfo.username}</strong></p>
-        <button onClick={handleLogout}>Logout</button>
+        <div className="chat-users">
+          <h3>Users online:</h3>
+          {
+            chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
+          }
+        </div>
       </div>
 
-      <div className="chat-users">
-        <h3>Users online:</h3>
-        {
-          chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
-        }
-      </div>
 
     </div>
   );
