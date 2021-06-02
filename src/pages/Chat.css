@@ -22,10 +22,13 @@
     background-color: #fff;
     background-color: rgb(63,94,251);
     color: #fff;
+    word-wrap: break-word;
 }
 
 .chat-entry span {
     font-weight: bold;
+    display: block;
+    color: var(--dark-color);
 }
 
 
@@ -42,6 +45,7 @@
     background-color: rgb(63,94,251);
     color: #fff;
     padding: .75rem;
+    padding-right: 2.75rem;
     
     font-family: 'Roboto', sans-serif;
     font-size: 1rem;
@@ -77,6 +81,10 @@
     margin-bottom: 1.5rem;
 }
 
+.chat-profile p {
+    color: #fc466b;
+}
+
 .chat-profile button {
     padding: .5rem;
     background-color: #3f5efb;
@@ -97,6 +105,10 @@
     background-color: var(--background-color);
     border-radius: .5rem;
     text-align: center;
+}
+
+.chat-users p {
+    color: var(--dark-color);
 }
 
 

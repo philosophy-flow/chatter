@@ -149,7 +149,7 @@ export default function Chat() {
         </div>
 
         <div className="chat-users">
-          <h3>Users online:</h3>
+          <h3>Users Online:</h3>
           {
             chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
           }
