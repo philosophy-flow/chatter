@@ -121,7 +121,7 @@ export default function Chat() {
 
   return (
     <div className="Chat">
-      <div className="chat-logo">CHATTER</div>
+      <div className="chat-logo"><h1>Chatter</h1></div>
 
       <div className="chat-log">
         {

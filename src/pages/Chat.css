@@ -113,47 +113,52 @@
 
 
 
+/* non-mobile */
+@media only screen and (min-width: 800px) {
+    .Chat {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+        gap: 0px 0px;
+        grid-template-areas:
+          "chat-logo chat-log chat-log chat-log"
+          "chat-info-container chat-log chat-log chat-log"
+          "chat-info-container chat-log chat-log chat-log"
+          "chat-info-container chat-log chat-log chat-log"
+          "chat-info-container chat-form chat-form chat-form";
+      
+        height: 700px;
+    }
 
+    .chat-log { grid-area: chat-log; height: auto;  margin-left: 1.5rem; }
+    .chat-logo { grid-area: chat-logo;}
+    .chat-info-container { grid-area: chat-info-container; }
+    .chat-form { grid-area: chat-form; margin-left: 1.5rem;}
 
+    .chat-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #fc466b;
+        font-size: 1.75rem;
+    }
 
-/* .Chat {
-    max-width: 800px;
-    width: 80%;
-    max-height: 600px;
+    .chat-users {
+        height: 394px;
+    }
 
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
+    .chat-form {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 
-    grid-template-areas:
-    "chat-logo chat-log chat-log"
-    "chat-profile chat-log chat-log"
-    "chat-profile chat-log chat-log"
-    "chat-profile chat-log chat-log"
-    "chat-users chat-log chat-log"
-    "chat-users chat-log chat-log"
-    "chat-users chat-log chat-log"
-    "chat-users chat-form chat-form";
+    .chat-form input {
+        height: 4rem
+    }
+
+    .chat-form button {
+       top: 3rem;
+    }
 }
 
-.chat-profile { grid-area: chat-profile; }
-.chat-users { grid-area: chat-users; }
-.chat-logo { grid-area: chat-logo; }
-.chat-log { grid-area: chat-log; }
-.chat-form { grid-area: chat-form; }
-
-
-
-.chat-profile {
-
-}
-
-.chat-users {
-
-}
-
-
-.chat-log {
-    overflow: scroll;
-} */

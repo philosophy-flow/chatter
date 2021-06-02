@@ -50,3 +50,12 @@ body {
     color: #fc466b;
     transition: .3s;
 }
+
+
+/* non-mobile */
+@media only screen and (min-width: 800px) {
+    .App {
+        width: 75%;
+        max-width: 800px;
+    }
+}
