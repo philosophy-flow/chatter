@@ -127,8 +127,9 @@ export default function Chat() {
         {
           chatInfo.chats.map(chat => {
             return (
-              <p key={chat.timestamp}>
-                <strong>{chat.username}: </strong>{chat.content}
+              <p className="chat-entry" key={chat.timestamp}>
+                <span style={chat.username === chatInfo.username ? {color: '#fc466b'} : null}>{chat.username}: </span>
+                {chat.content}
               </p>
             )
           })
@@ -137,8 +138,8 @@ export default function Chat() {
       </div>
       
       <form className="chat-form" onSubmit={handleSubmit}>
-        <input type="text" value={chatInfo.content} onChange={handleChange} />
-        <button type="submit">Submit</button>
+        <input type="text" placeholder="Say something..." value={chatInfo.content} onChange={handleChange} />
+        <button type="submit"><i class="fas fa-arrow-right fa-2x"></i></button>
       </form>
 
       <div className="chat-profile">
