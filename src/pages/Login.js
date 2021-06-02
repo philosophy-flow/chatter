@@ -1,4 +1,4 @@
-import './credentials.css';
+import './Credentials.css';
 import React, {useState} from 'react';
 import {signin, resetPassword} from '../firebase';
 import {Link} from 'react-router-dom';

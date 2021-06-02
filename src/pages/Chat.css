@@ -1,4 +1,32 @@
 .Chat {
+    width: 100%;
+    border: 1px solid red;
+}
+
+.chat-logo {
+    display: none;
+}
+
+.chat-log {
+    height: 400px;
+    overflow: scroll;
+    margin-bottom: 1rem;
+}
+
+.chat-profile {
+    margin: 2rem 0;
+}
+
+.chat-users {
+
+}
+
+
+
+
+
+
+/* .Chat {
     max-width: 800px;
     width: 80%;
     max-height: 600px;
@@ -38,4 +66,4 @@
 
 .chat-log {
     overflow: scroll;
-}
+} */
