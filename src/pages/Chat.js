@@ -1,5 +1,5 @@
 import './Chat.css';
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useRef} from 'react';
 import {auth, db} from '../firebase';
 
 export default function Chat() {
@@ -12,6 +12,17 @@ export default function Chat() {
     readError: null,
     writeError: null
   });
+
+
+  // scroll to bottom of chat log when updated
+  const logEndRef = useRef(null);
+  const scrollToBottom = () => {
+    logEndRef.current.scrollIntoView({behavior: 'smooth'});
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatInfo.chats])
 
 
   // read info from database
@@ -122,7 +133,7 @@ export default function Chat() {
             )
           })
         }
-        
+        <div ref={logEndRef}></div>
       </div>
       
       <form className="chat-form" onSubmit={handleSubmit}>
