@@ -5,6 +5,11 @@
 :root {
     --background-color: #F3F6FC;
     --dark-color: #19233B;
+
+    --red-color: #da7f8f;
+    --blue-color: #a7bbc7;
+    --light-blue-color: #e1e5ea;
+    --light-color: #faf3f3;
 }
 
 /* GLOBAL */
@@ -22,8 +27,11 @@ html {
 
 body {
     height: 100%;
-    background: rgb(63,94,251);
-    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%);
+    /* background: rgb(63,94,251);
+    background: radial-gradient(circle, rgba(63,94,251,1) 0%, rgba(252,70,107,1) 100%); */
+
+    background: rgb(218,127,143);
+    background: linear-gradient(90deg, rgba(218,127,143,1) 0%, rgba(167,187,199,1) 50%, rgba(218,127,143,1) 100%);
 }
 
 .root {
@@ -47,7 +55,7 @@ body {
 }
 
 .Link:hover {
-    color: #fc466b;
+    color: var(--red-color);
     transition: .3s;
 }
 

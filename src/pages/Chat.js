@@ -128,7 +128,7 @@ export default function Chat() {
           chatInfo.chats.map(chat => {
             return (
               <p className="chat-entry" key={chat.timestamp}>
-                <span style={chat.username === chatInfo.username ? {color: '#fc466b'} : null}>{chat.username}: </span>
+                <span style={chat.username === chatInfo.username ? {color: '#da7f8f'} : null}>{chat.username}: </span>
                 {chat.content}
               </p>
             )
@@ -151,7 +151,16 @@ export default function Chat() {
         <div className="chat-users">
           <h3>Users Online:</h3>
           {
-            chatInfo.usersOnline.map(user => <p key={user}>{user}</p>)
+            chatInfo.usersOnline.map(user => {
+            return (
+            <p 
+              key={user} 
+              style={user === chatInfo.username ? {color: '#da7f8f'} : null}
+            >
+              {user}
+            </p>
+            )
+            })
           }
         </div>
       </div>

@@ -15,7 +15,7 @@
 
 @keyframes color-change {
     0% {color: #000;}
-    100% {color: #fc466b;}
+    100% {color: var(--red-color);}
 }
 
 .home-main-text span {
