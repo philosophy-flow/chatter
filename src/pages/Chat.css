@@ -57,8 +57,8 @@
 
     position: absolute;
     right: 1.75rem;
-    top: 45%;
-    transform: translateY(-45%);
+    top: 50%;
+    transform: translateY(-50%);
     cursor: pointer;
 }
 
