@@ -1,10 +1,13 @@
 # Chatter
 
+![](./chatter-app.png)
+
 ## Table of contents
 - [Overview](#overview)
 - [My process](#my-process)
   - [Built with](#built-with)
   - [Application Structure](#application-structure)
+  - [Database Structure](#database-structure)
   - [What I learned](#what-i-learned)
   - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
@@ -12,7 +15,6 @@
 
 
 ## Overview
-![](./chatter-app.png)
 
 A React chat application built with Firebase Authentication and Realtime database. Users can create an account and chat with other users. A presence system also allows everyone to see who else is online at any given time.
 
