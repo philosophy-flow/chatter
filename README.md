@@ -8,7 +8,6 @@
   - [Built with](#built-with)
   - [Application Structure](#application-structure)
   - [Database Structure](#database-structure)
-  - [Continued development](#continued-development)
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
@@ -45,10 +44,6 @@ The chat node stores all of the application's chats, including meta-data about e
 The online node relates each user's unique id created by Firebase Authentication and a boolean indicating whether not the current user is online.
 
 The online node relates each user's unique id created by Firebase Authentication and their username/email address. 
-
-### Continued development
-
------COMING SOON-----
 
 ### Useful resources
 
